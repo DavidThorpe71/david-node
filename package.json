@@ -1,7 +1,7 @@
 {
   "name": "david-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "personal site test",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +23,9 @@
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "eslint": "^4.12.1",
+    "lodash": "^4.17.5"
   }
 }
