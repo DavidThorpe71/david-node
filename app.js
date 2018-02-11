@@ -12,13 +12,27 @@ console.log('Command entered: ', command);
 console.log('Yargs: ', argv);
 
 if (command === 'add') {
-    notes.addNote(argv.title, argv.body);
+    var note = notes.addNote(argv.title, argv.body);
+    if (note) {
+        console.log(`Note added`);
+        notes.logNote(note);
+    } else {
+        console.log('note already exists');
+    }
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
-    notes.getNote(argv.title);
+    note = notes.getNote(argv.title);
+    if (note) {
+        console.log(`Note read`);
+        notes.logNote(note);
+    } else {
+        console.log('note does not exist');
+    }
 } else if (command === 'remove') {
-    notes.removeNote(argv.title);
+    var noteRemoved = notes.removeNote(argv.title);
+    var message = noteRemoved ? `Note successfully removed` : `Note does not exist`;
+    console.log(message);
 } else {
     console.log('Command not recognised');
 };
